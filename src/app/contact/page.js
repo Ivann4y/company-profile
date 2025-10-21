@@ -44,23 +44,29 @@ export default function HalamanKontak() {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-gradient-to-br from-blue-50 via-white to-blue-100 min-h-screen">
       {/* --- BAGIAN ATAS: HEADER --- */}
-      <div className="relative bg-gray-200 h-96 flex items-center justify-center overflow-hidden">
-        {/* Placeholder untuk gambar */}
+      <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 h-96 flex items-center justify-center overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 bg-blue-900 bg-opacity-30"></div>
+        <div className="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-white bg-opacity-15 rounded-full blur-xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-25 rounded-full blur-lg"></div>
         
         <motion.div
-          className="relative z-10 text-center bg-white bg-opacity-80 p-8 rounded-lg shadow-lg max-w-2xl mx-auto"
+          className="relative z-10 text-center bg-white p-8 rounded-2xl shadow-2xl max-w-2xl mx-auto border border-blue-200"
           initial="hidden" // Mulai dari state 'hidden'
           whileInView="visible" // Animasikan ke state 'visible' saat muncul di layar
           viewport={{ once: true }} // Hanya animasikan sekali
           variants={fadeInVariants} // Gunakan varian yang kita definisikan
         >
-          <FaGraduationCap className="text-sidang-blue text-5xl mx-auto mb-4" />
-          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mb-6">
+            <FaGraduationCap className="text-white text-3xl" />
+          </div>
+          <h1 className="text-4xl font-extrabold text-blue-900 sm:text-5xl">
             Sistem Pendaftaran Sidang
           </h1>
-          <p className="mt-4 text-xl text-gray-600">
+          <p className="mt-4 text-xl text-blue-700">
             Kami siap membantu Anda dalam proses pendaftaran dan informasi sidang.
           </p>
         </motion.div>
@@ -77,18 +83,20 @@ export default function HalamanKontak() {
         >
           {/* Kartu Email */}
           <motion.div
-            className="bg-white p-8 rounded-lg shadow-md border border-gray-100 flex flex-col items-center text-center
-                       hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer" // <-- EFEK HOVER TAILWIND
+            className="bg-white p-8 rounded-2xl shadow-lg border border-blue-200 flex flex-col items-center text-center
+                       hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer group" // <-- EFEK HOVER TAILWIND
             variants={cardItemVariants} // Varian untuk tiap item
           >
-            <FaEnvelope className="text-sidang-blue text-4xl mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Email Administrasi</h3>
-            <p className="text-gray-600 mb-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <FaEnvelope className="text-white text-2xl" />
+            </div>
+            <h3 className="text-xl font-bold text-blue-900 mb-3">Email Administrasi</h3>
+            <p className="text-blue-700 mb-6 font-medium">
               akademik@poltekastra.ac.id
             </p>
             <a
               href="mailto:akademik@poltekastra.ac.id"
-              className="text-sidang-blue hover:text-blue-700 font-medium flex items-center group" // <-- Tambah 'group'
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl" // <-- Tambah 'group'
             >
               Kirim Email
               <svg
@@ -110,20 +118,22 @@ export default function HalamanKontak() {
 
           {/* Kartu Alamat */}
           <motion.div
-            className="bg-white p-8 rounded-lg shadow-md border border-gray-100 flex flex-col items-center text-center
-                       hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer" // <-- EFEK HOVER TAILWIND
+            className="bg-blue-50 p-8 rounded-2xl shadow-lg border border-blue-200 flex flex-col items-center text-center
+                       hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer group" // <-- EFEK HOVER TAILWIND
             variants={cardItemVariants} // Varian untuk tiap item
           >
-            <FaMapMarkerAlt className="text-sidang-blue text-4xl mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Lokasi Sekretariat</h3>
-            <p className="text-gray-600 mb-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <FaMapMarkerAlt className="text-white text-2xl" />
+            </div>
+            <h3 className="text-xl font-bold text-blue-900 mb-3">Lokasi Sekretariat</h3>
+            <p className="text-blue-700 mb-6 font-medium">
               Gedung Rektorat Lt. 2, Ruang 204, Kampus Politeknik Astra, Jakarta
             </p>
             <a
               href="https://maps.app.goo.gl/YourCampusLocation"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sidang-blue hover:text-blue-700 font-medium flex items-center group" // <-- Tambah 'group'
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl" // <-- Tambah 'group'
             >
               Lihat di Peta
               <svg
@@ -145,20 +155,22 @@ export default function HalamanKontak() {
 
           {/* Kartu Telepon */}
           <motion.div
-            className="bg-white p-8 rounded-lg shadow-md border border-gray-100 flex flex-col items-center text-center
-                       hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer" // <-- EFEK HOVER TAILWIND
+            className="bg-white p-8 rounded-2xl shadow-lg border border-blue-200 flex flex-col items-center text-center
+                       hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer group" // <-- EFEK HOVER TAILWIND
             variants={cardItemVariants} // Varian untuk tiap item
           >
-            <FaPhoneAlt className="text-sidang-blue text-4xl mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Telepon (Jam Kerja)</h3>
-            <p className="text-gray-600 mb-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-700 to-blue-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <FaPhoneAlt className="text-white text-2xl" />
+            </div>
+            <h3 className="text-xl font-bold text-blue-900 mb-3">Telepon (Jam Kerja)</h3>
+            <p className="text-blue-700 mb-6 font-medium">
               (021) 1234 5678 ext. 112
               <br />
               Senin - Jumat: 08.00 - 16.00 WIB
             </p>
             <a
               href="tel:+622112345678"
-              className="text-sidang-blue hover:text-blue-700 font-medium flex items-center group" // <-- Tambah 'group'
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-700 to-blue-800 text-white font-semibold rounded-full hover:from-blue-800 hover:to-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl" // <-- Tambah 'group'
             >
               Hubungi Sekarang
               <svg
@@ -189,19 +201,24 @@ export default function HalamanKontak() {
         variants={fadeInVariants}
       >
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">Formulir Bantuan & Pertanyaan</h2>
-          <p className="mt-2 text-lg text-gray-600">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mb-6">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+          </div>
+          <h2 className="text-3xl font-bold text-blue-900">Formulir Bantuan & Pertanyaan</h2>
+          <p className="mt-4 text-lg text-blue-700">
             Isi formulir di bawah ini, dan kami akan segera menghubungi Anda.
           </p>
         </div>
 
-        <form action="#" method="POST" className="space-y-6 bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-100">
+        <form action="#" method="POST" className="space-y-6 bg-white p-8 rounded-2xl shadow-xl border-2 border-blue-200">
           {/* ... (Isi formulir tetap sama) ... */}
           {/* Nama Lengkap Mahasiswa */}
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-semibold text-blue-900 mb-2"
             >
               Nama Lengkap Mahasiswa
             </label>
@@ -210,7 +227,7 @@ export default function HalamanKontak() {
               name="name"
               id="name"
               placeholder="Contoh: Budi Santoso"
-              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sidang-blue focus:ring-sidang-blue sm:text-sm"
+              className="block w-full px-4 py-3 rounded-xl border-2 border-blue-200 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 bg-white hover:border-blue-300"
             />
           </div>
 
@@ -218,7 +235,7 @@ export default function HalamanKontak() {
           <div>
             <label
               htmlFor="nim"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-semibold text-blue-900 mb-2"
             >
               NIM
             </label>
@@ -227,7 +244,7 @@ export default function HalamanKontak() {
               name="nim"
               id="nim"
               placeholder="Contoh: 202100123"
-              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sidang-blue focus:ring-sidang-blue sm:text-sm"
+              className="block w-full px-4 py-3 rounded-xl border-2 border-blue-200 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 bg-white hover:border-blue-300"
             />
           </div>
 
@@ -235,7 +252,7 @@ export default function HalamanKontak() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-semibold text-blue-900 mb-2"
             >
               Email Mahasiswa
             </label>
@@ -244,7 +261,7 @@ export default function HalamanKontak() {
               name="email"
               id="email"
               placeholder="Contoh: budi.s@student.poltekastra.ac.id"
-              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sidang-blue focus:ring-sidang-blue sm:text-sm"
+              className="block w-full px-4 py-3 rounded-xl border-2 border-blue-200 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 bg-white hover:border-blue-300"
             />
           </div>
 
@@ -252,7 +269,7 @@ export default function HalamanKontak() {
           <div>
             <label
               htmlFor="subject"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-semibold text-blue-900 mb-2"
             >
               Subjek Pesan
             </label>
@@ -261,7 +278,7 @@ export default function HalamanKontak() {
               name="subject"
               id="subject"
               placeholder="Contoh: Pertanyaan Jadwal Sidang, Kendala Login"
-              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sidang-blue focus:ring-sidang-blue sm:text-sm"
+              className="block w-full px-4 py-3 rounded-xl border-2 border-blue-200 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 bg-white hover:border-blue-300"
             />
           </div>
 
@@ -269,7 +286,7 @@ export default function HalamanKontak() {
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-semibold text-blue-900 mb-2"
             >
               Pesan Anda
             </label>
@@ -278,18 +295,21 @@ export default function HalamanKontak() {
               id="message"
               rows={5}
               placeholder="Tuliskan detail pertanyaan atau kendala Anda di sini..."
-              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sidang-blue focus:ring-sidang-blue sm:text-sm"
+              className="block w-full px-4 py-3 rounded-xl border-2 border-blue-200 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 bg-white hover:border-blue-300 resize-none"
             />
           </div>
 
           {/* Tombol Submit */}
-          <div>
+          <div className="pt-4">
             <button
               type="submit"
-              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-sidang-blue 
-                         hover:bg-opacity-90 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sidang-blue
-                         transition-all duration-300 transform " // <-- EFEK HOVER TAILWIND
+              className="w-full flex justify-center items-center py-4 px-6 border border-transparent rounded-xl shadow-lg text-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-blue-600 
+                         hover:from-blue-600 hover:to-blue-700 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-200
+                         transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 group" // <-- EFEK HOVER TAILWIND
             >
+              <svg className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+              </svg>
               Kirim Pertanyaan
             </button>
           </div>
