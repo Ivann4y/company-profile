@@ -2,7 +2,7 @@
   "name": "company-profile",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Ivann4y.github.io/company-profile",
+  "homepage": "https://ivann4y.github.io/company-profile",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
