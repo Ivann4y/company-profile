@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link"; // ⬅️ Tambahkan ini di atas!
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 py-10 mt-10">
@@ -17,10 +19,26 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Navigasi</h3>
           <ul className="space-y-2">
-            <li><a href="/" className="hover:text-teal-400 transition">Home</a></li>
-            <li><a href="/about" className="hover:text-teal-400 transition">Tentang Kami</a></li>
-            <li><a href="/product" className="hover:text-teal-400 transition">Produk</a></li>
-            <li><a href="/contact" className="hover:text-teal-400 transition">Kontak</a></li>
+            <li>
+              <Link href="/" className="hover:text-teal-400 transition">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="hover:text-teal-400 transition">
+                Tentang Kami
+              </Link>
+            </li>
+            <li>
+              <Link href="/product" className="hover:text-teal-400 transition">
+                Produk
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-teal-400 transition">
+                Kontak
+              </Link>
+            </li>
           </ul>
         </div>
 
