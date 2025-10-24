@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // ⬅️ WAJIB, menggantikan 'next export'
+  output: 'export',
+  trailingSlash: true, // ⬅️ TAMBAHKAN INI! Penting untuk GitHub Pages
   images: {
     unoptimized: true,
-    domains: ["images.unsplash.com", "tailwindcss.com"], // kalau kamu pakai domain ini
+    domains: ["images.unsplash.com", "tailwindcss.com"],
   },
-  basePath: '/company-profile', // ganti sesuai nama repo kamu
+  basePath: '/company-profile',
   assetPrefix: '/company-profile/',
 };
 
